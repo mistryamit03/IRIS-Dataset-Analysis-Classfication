@@ -1,4 +1,4 @@
-import pandas as pd
+aimport pandas as pd
 import numpy as np
 import os
 import matplotlib.pyplot as plt
@@ -18,11 +18,11 @@ df.head()
 
 df.describe()
 
-# to get basic info about the data type
+**To get basic info about the data type**
 
 df.info()
 
-# to display number of samples on each class
+**To display number of samples on each class**
 
 df['Species'].value_counts()
 
@@ -42,7 +42,7 @@ df['SepalWidthCm'].hist()
 df['PetalLengthCm'].hist()
 df['PetalWidthCm'].hist()
 
-# Scatter Plot
+**Scatter Plot**
 
 colors = ['red', 'orange', 'blue']
 species = ['Iris-setosa','Iris-versicolor','Iris-virginica']
@@ -64,20 +64,16 @@ for i in range(3):
     plt.legend()
 
 
-**Correlation Matrix
-A correlation matrix is a table showing correlation coefficients between variables. Each cell in the table shows the correlation between two variables. 
+**Correlation Matrix: A correlation matrix is a table showing correlation coefficients between variables. Each cell in the table shows the correlation between two variables. 
 The value is in the range of -1 to 1. If two variables have high correlation, we can neglect one variable from those two.**
 
-    df.corr()
-
-    corr = df.corr()
+adf.corr()
+corr = df.corr()
 fig, ax = plt.subplots(figsize = (4,8))
 sns.heatmap(corr, annot = True, ax=ax, cmap = 'coolwarm')
 
-**Label Encoder
-In ML, we usually deal with datasets which contains multiple lables in one or more than one columns. 
-These labels can be in the form of words or numbers. 
-Label encoding refers to converting the lables into numeric form so as to convert it into the MR form.**
+**Label Encoder: In ML, we usually deal with datasets which contains multiple lables in one or more than one columns. 
+These labels can be in the form of words or numbers.Label encoding refers to converting the lables into numeric form so as to convert it into the MR form.**
 
 from sklearn.preprocessing import LabelEncoder
 le = LabelEncoder()
